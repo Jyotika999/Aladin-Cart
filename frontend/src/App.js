@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom"
 import {BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container } from 'react-bootstrap';
+// import { Container } from 'react-bootstrap';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen';
@@ -16,7 +16,7 @@ export default function App() {
         {/* <Container> */}
         {/* <main className='py-3'> */}
         <Route path="/" element={<HomeScreen />}/>
-          <Route path='/product/:id' element={<ProductScreen />} />
+        <Route path="/product/:id" element={<ProductScreen/>} />
           {/* <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} /> */}
