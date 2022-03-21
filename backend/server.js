@@ -1,7 +1,7 @@
-const express= require('express');
-const { param } = require('express/lib/request');
-const products= require('./data/products');
-const dotenv = require('dotenv');
+import express from 'express';
+// const { param } = require('express/lib/request');
+import products from './data/products.js';
+import dotenv from 'dotenv';
 
 dotenv.config()
 
