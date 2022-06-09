@@ -6,25 +6,24 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import { Container } from 'react-bootstrap';
 
 export default function App() {
   return (
     <BrowserRouter>
     <Header/>
+    <main className='py-3'>
+    <Container>
+    
       <Routes>
-        {/* <Header/> */}
-        {/* <Container> */}
-        {/* <main className='py-3'> */}
+      
         <Route path="/" element={<HomeScreen />}/>
         <Route path="/product/:id" element={<ProductScreen/>} />
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} /> */}
-        {/* </Container> */}
-        {/* </Routes> */}
+        
       </Routes>
-      {/* </main> */}
       <Footer />
+      </Container>
+      </main>
     </BrowserRouter>
   );
 }
