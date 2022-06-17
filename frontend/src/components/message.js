@@ -6,7 +6,6 @@ const Message = ({varient, children}) => {
         <Alert varient={varient} >
             {children}
         </Alert>
-        
     )
 }
 Message.defaultProps = {
