@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Link, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import {Row, Col, Image, ListGroup, Card, Button, ListGroupItem, FormControl} from 'react-bootstrap'
 import Ratings from '../components/Ratings'
@@ -8,11 +9,14 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 // import products from '../products'
 
+
+
 const ProductScreen = ({ match }) => {
 
     const dispatch = useDispatch()
     const productDetails= useSelector( (state) => state.productDetails)
     const { id } = useParams()
+    const history = useNavigate()
     const [qty, setQty] =useState(0)
     const {loading, error, product}= productDetails
     // const product = products.find(p => p._id === match.params.id);
@@ -23,8 +27,9 @@ const ProductScreen = ({ match }) => {
       }, [dispatch, id])
 
     const addTocartHandler = () => {
-        // history.push(`/cart/${id}?qty=${qty}`)
-        console.log("hello")
+        const urll = `/cart/${id}?qty=${qty}`
+        history(urll)
+        // console.log("hello")
     }
 
     return <>
