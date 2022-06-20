@@ -17,7 +17,7 @@ const ProductScreen = ({ match }) => {
     const productDetails= useSelector( (state) => state.productDetails)
     const { id } = useParams()
     const history = useNavigate()
-    const [qty, setQty] =useState(0)
+    const [qty, setQty] =useState(1)
     const {loading, error, product}= productDetails
     // const product = products.find(p => p._id === match.params.id);
 
