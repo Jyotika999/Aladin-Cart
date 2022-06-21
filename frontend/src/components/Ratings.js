@@ -1,61 +1,75 @@
 import React from 'react'
-// import { propTypes } from 'react-bootstrap/esm/Image';
 
-
-// creating ratings of all products via stars
-// done via checking the abosilute values >= 1, >=2 , >=3, >=4 , >=5 since we are considering 5 icons for the same
-const Ratings = ({ value, Text, color }) => {
-    return (
-        <div className='ratings'>
-            <span>
-                <i style={{ color }} className={
-                    value >= 1
-                        ? 'fa-solid fa-star'
-                        : value >= 0.5
-                            ? 'fa-solid fa-star-half-stroke'
-                            : 'fa-regular fa-star'}></i>
-            </span>
-            <span>
-                <i style={{ color }} className={
-                    value >= 2
-                        ? 'fa-solid fa-star'
-                        : value >= 1.5
-                            ? 'fa-solid fa-star-half-stroke'
-                            : 'fa-regular fa-star'}></i>
-            </span>
-            <span>
-                <i style={{ color }} className={
-                    value >= 3
-                        ? 'fa-solid fa-star'
-                        : value >= 2.5
-                            ? 'fa-solid fa-star-half-stroke'
-                            : 'fa-regular fa-star'}></i>
-            </span>
-            <span>
-                <i style={{ color }} className={
-                    value >= 4
-                        ? 'fa-solid fa-star'
-                        : value >= 3.5
-                            ? 'fa-solid fa-star-half-stroke'
-                            : 'fa-regular fa-star'}></i>
-            </span>
-            <span>
-                <i style={{ color }} className={
-                    value >= 5
-                        ? 'fa-solid fa-star'
-                        : value >= 4.5
-                            ? 'fa-solid fa-star-half-stroke'
-                            : 'fa-regular fa-star'}></i>
-            </span>
-            <span>{Text && Text}</span>
-        </div>
-    )
+const Rating = ({ value, text, color }) => {
+  return (
+    <div className='rating'>
+      <span>
+        <i
+          style={{ color }}
+          className={
+            value >= 1
+              ? 'fas fa-star'
+              : value >= 0.5
+              ? 'fas fa-star-half-alt'
+              : 'far fa-star'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          style={{ color }}
+          className={
+            value >= 2
+              ? 'fas fa-star'
+              : value >= 1.5
+              ? 'fas fa-star-half-alt'
+              : 'far fa-star'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          style={{ color }}
+          className={
+            value >= 3
+              ? 'fas fa-star'
+              : value >= 2.5
+              ? 'fas fa-star-half-alt'
+              : 'far fa-star'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          style={{ color }}
+          className={
+            value >= 4
+              ? 'fas fa-star'
+              : value >= 3.5
+              ? 'fas fa-star-half-alt'
+              : 'far fa-star'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          style={{ color }}
+          className={
+            value >= 5
+              ? 'fas fa-star'
+              : value >= 4.5
+              ? 'fas fa-star-half-alt'
+              : 'far fa-star'
+          }
+        ></i>
+      </span>
+      <span>{text && text}</span>
+    </div>
+  )
 }
 
-// Ratings.prototype={
-//     value: propTypes.number.isRequired,
-//     Text: propTypes.string.isRequired,
-//     color: propTypes.string,
-// }
+Rating.defaultProps = {
+  color: '#f8e825',
+}
 
-export default Ratings;
+export default Rating

@@ -15,13 +15,13 @@ const LoginScreen = () =>{
     const dispatch= useDispatch()
     const userLogin = useSelector(state =>state.userLogin )
     const history = useNavigate()
-    const redirect = searchParams.get('')? searchParams.get(''): '/'
+    const redirect = searchParams.get('redirect')? searchParams.get('redirect'): '/'
 
     const {loading, error, userInfo} = userLogin
 
     useEffect(()=>{
         if(userInfo){
-            history(redirect)
+            history(`/${redirect}`)
         }
     }, [history, userInfo, redirect])
 
