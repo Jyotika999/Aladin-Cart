@@ -10,6 +10,7 @@ import { Container } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import store from './store';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path='/product/:id' element={<ProductScreen/>} />
         <Route path='/cart/:id' element={<CartScreen/>} />
         <Route path='/login' element={<LoginScreen/>} />
+        <Route path='/register' element={<RegisterScreen/>} />
         <Route path='/cart/' element={<CartScreen />} />
         <Route path='/' element={<HomeScreen />}/>
         
