@@ -13,9 +13,9 @@ const LoginScreen = () =>{
     const [password, setPassword] = useState('');
     const [searchParams] = useSearchParams()
     const dispatch= useDispatch()
-    const userLogin = useSelector(state =>state.userLogin )
+    const userLogin = useSelector(state => state.userLogin )
     const history = useNavigate()
-    const redirect = searchParams.get('redirect')? searchParams.get('redirect'): '/'
+    const redirect = searchParams.get('redirect')? searchParams.get('redirect'): ''
 
     const {loading, error, userInfo} = userLogin
 
