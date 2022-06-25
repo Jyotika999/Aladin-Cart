@@ -5,7 +5,7 @@ import { Table, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { listUsers } from '../actions/userActions'
+import { listUsers, deleteUser } from '../actions/userActions'
 
 const UserListScreen = () => {
 
@@ -15,8 +15,9 @@ const UserListScreen = () => {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
-//   const userDelete = useSelector((state) => state.userDelete)
-//   const { success: successDelete } = userDelete
+  const userDelete = useSelector((state) => state.userDelete)
+  const { success: successDelete } = userDelete
+
   const dispatch = useDispatch()
   const history = useNavigate()
 
@@ -27,12 +28,12 @@ const UserListScreen = () => {
     else {
       history('/login')
     }
-  }, [dispatch, history, userInfo])
+  }, [dispatch, history, successDelete, userInfo])
 
   const deleteHandler = (id) => {
-    // if (window.confirm('Are you sure')) {
-    //   dispatch(deleteUser(id))
-    // }
+    if (window.confirm('Are you sure')) {
+      dispatch(deleteUser(id))
+    }
     console.log('delete')
   }
 
