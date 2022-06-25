@@ -15,6 +15,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import UserListScreen from './screens/UserListScreen';
 
 export default function App() {
   return (
@@ -34,7 +35,8 @@ export default function App() {
         <Route path='/shipping' element={<ShippingScreen/>} />
         <Route path='/profile' element={<ProfileScreen/>} />
         <Route path='/register' element={<RegisterScreen/>} />
-        <Route path='/cart/' element={<CartScreen />} />
+        <Route path='/cart' element={<CartScreen />} />
+        <Route path='/admin/userlist' element={<UserListScreen />} />
         <Route path='/' element={<HomeScreen />}/>
         
       </Routes>
