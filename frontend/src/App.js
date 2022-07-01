@@ -17,6 +17,8 @@ import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScree';
+import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 export default function App() {
   return (
@@ -38,7 +40,9 @@ export default function App() {
         <Route path='/register' element={<RegisterScreen/>} />
         <Route path='/cart' element={<CartScreen />} />
         <Route path='/admin/userlist' element={<UserListScreen />} />
+        <Route path='/admin/productlist' element={<ProductListScreen />} />
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
+        <Route path='/admin/product/:id/edit' element={<ProductEditScreen />} />
         <Route path='/' element={<HomeScreen />}/>
         
       </Routes>
