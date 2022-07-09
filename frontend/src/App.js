@@ -19,6 +19,7 @@ import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScree';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
+import OrderScreen from './screens/OrderScreen';
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path='/login' element={<LoginScreen/>} />
         <Route path='/payment' element={<PaymentScreen/>} />
         <Route path='/placeorder' element={<PlaceOrderScreen/>} />
+        <Route path='/orders/:id' element={<OrderScreen/>} />
         <Route path='/shipping' element={<ShippingScreen/>} />
         <Route path='/profile' element={<ProfileScreen/>} />
         <Route path='/register' element={<RegisterScreen/>} />
