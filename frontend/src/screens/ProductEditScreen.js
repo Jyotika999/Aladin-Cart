@@ -1,4 +1,4 @@
-// import axios from 'axios'
+import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Form, Button, FormGroup, FormLabel, FormControl } from 'react-bootstrap'
@@ -20,7 +20,7 @@ const ProductEditScreen = () => {
   const [category, setCategory] = useState('')
   const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
-  // const [uploading, setUploading] = useState(false)
+  const [uploading, setUploading] = useState(false)
 
   const productDetails = useSelector((state) => state.productDetails)
   const { loading, error, product } = productDetails
@@ -54,29 +54,29 @@ const ProductEditScreen = () => {
       }
   }, [dispatch, history, productId, product, successUpdate])
 
-  // const uploadFileHandler = async (e) => {
-  //   const file = e.target.files[0]
-  //   const formData = new FormData()
-  //   formData.append('image', file)
-  //   setUploading(true)
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0]
+    const formData = new FormData()
+    formData.append('image', file)
+    setUploading(true)
 
-  //   try { 
-  //     const config = {
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data',
-  //       },
-  //     }
+    try { 
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }
 
-  //     const { data } = await axios.post('/api/upload', formData, config)
+      const { data } = await axios.post('/api/upload', formData, config)
 
-  //     setImage(data)
-  //     setUploading(false)
-  //   } catch (error) {
-  //     console.error(error)
-  //     setUploading(false)
-  //   }
-  //  console.log("jkgu")
-  // }
+      setImage(data)
+      setUploading(false)
+    } catch (error) {
+      console.error(error)
+      setUploading(false)
+    }
+   console.log("jkgu")
+  }
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -137,13 +137,12 @@ const ProductEditScreen = () => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></FormControl>
-              {/* <FormFile
-                id='image-file'
+              <FormControl type='file'
+                controlid='image-file'
                 label='Choose File'
-                custom
                 onChange={uploadFileHandler}
-              ></FormFile>
-              {uploading && <Loader />} */}
+              ></FormControl>
+              {uploading && <Loader />}
             </FormGroup>
 
             <FormGroup className='mt-2' controlId='brand'>
